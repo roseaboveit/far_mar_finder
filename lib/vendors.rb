@@ -6,4 +6,10 @@ class Vendor
     @num_employees = array[2]
     @market_id = array[3]
   end
+
+
+  def self.all
+    CSV.read("./support/vendors.csv").map do |array|
+      Vendor.new()
+    end
 end

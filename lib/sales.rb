@@ -8,4 +8,10 @@ class Sale
     @product_id = array[4]
     
   end
+
+
+  def self.all
+    CSV.read("./support/sales.csv").map do |array|
+      Sale.new()
+    end
 end
