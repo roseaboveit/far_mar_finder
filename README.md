@@ -1,6 +1,7 @@
 #Authors
 
 -Galina Yermicheva
+-Whitney Levis
 
 # FarMar Finder
 
