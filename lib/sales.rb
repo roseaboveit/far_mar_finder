@@ -1,5 +1,5 @@
 class Sale
-  attr_reader :id, 
+  attr_reader :id
   def initialize
     
   end
