@@ -24,10 +24,17 @@ class Market
   end
 
   def self.find_by_name(name) #Ideas for EC: Search for impartial name
+    all.find do |market_instance|
+      market_instance.name.upcase == name.upcase
+    end
+  end
+
+def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
     all.select do |market_instance|
       market_instance.name.upcase == name.upcase
     end
   end
+
   #Market.new should be able to be used for each of the elements of the Market file
 
 end

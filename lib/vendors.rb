@@ -21,6 +21,12 @@ class Vendor
   end
 
   def self.find_by_name(name) #Ideas for EC: Search for impartial name
+    all.find do |vendor_instance|
+      vendor_instance.name.upcase == name.upcase
+    end
+  end
+
+  def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
     all.select do |vendor_instance|
       vendor_instance.name.upcase == name.upcase
     end
