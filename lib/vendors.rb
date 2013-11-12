@@ -10,13 +10,13 @@ class Vendor
 
   def self.all
     CSV.read("./support/vendors.csv").map do |array|
-      Vendor.new()
+      Vendor.new(array)
     end
   end
 
   def self.find(id)
-    CSV.read("./support/vendors.csv").find do |array|
-      array.include?(id)
+    all.find do |vendor_instance|
+      vendor_instance.id.to_i == id
     end
   end
 end

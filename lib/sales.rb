@@ -12,13 +12,13 @@ class Sale
 
   def self.all
     CSV.read("./support/sales.csv").map do |array|
-      Sale.new()
+      Sale.new(array)
     end
   end
 
   def self.find(id)
-    CSV.read("./support/sales.csv").find do |array|
-      array.include?(id)
+    all.find do |sale_instance|
+      sale_instance.id.to_i == id
     end
   end
 end

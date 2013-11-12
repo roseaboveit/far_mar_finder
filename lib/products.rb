@@ -10,13 +10,13 @@ class Product
 
   def self.all
     CSV.read("./support/products.csv").map do |array|
-      Product.new()
+      Product.new(array)
     end
   end
 
   def self.find(id)
-    CSV.read("./support/products.csv").find do |array|
-      array.include?(id)
+    all.find do |product_instance|
+      product_instance.id.to_i == id
     end
   end
   

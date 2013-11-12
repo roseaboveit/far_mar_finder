@@ -13,13 +13,13 @@ class Market
 
   def self.all
     CSV.read("./support/markets.csv").map do |array|
-      Market.new()
+      Market.new(array)
     end
   end
 
   def self.find(id)
-    CSV.read("./support/markets.csv").find do |array|
-      array.include?(id)
+    all.find do |market_instance|
+      market_instance.id.to_i == id
     end
   end
   #Market.new should be able to be used for each of the elements of the Market file
