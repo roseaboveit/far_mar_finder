@@ -8,7 +8,7 @@ class Market
     @city = array[3]
     @county = array[4]
     @state = array[5]
-    @zip = array[6].to_i
+    @zip = array[6]
   end
 
   def self.all
@@ -29,7 +29,7 @@ class Market
     end
   end
 
-def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
+  def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
     all.select do |market_instance|
       market_instance.name.upcase == name.upcase
     end
@@ -41,6 +41,5 @@ def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
     end
   end 
 
-  #Market.new should be able to be used for each of the elements of the Market file
 
 end

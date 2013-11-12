@@ -39,16 +39,24 @@ class Product
     end
   end
   
-  def vendor # Returns the vendor instance associated with this product
-    
+  def vendor # Returns the vendor instance associated with this product's vendor_id
+    Vendor.all.find do |vendor_instance|
+      vendor_instance.id == @vendor_id
+    end  
   end
 
-  def sales # Returns collection of Sale instances associated with this product
-    
+  def sales # Returns collection of Sale instances associated with this Sale's product_id
+    Sale.all.select do |sale_instance|
+      sale_instance.product_id == @id
+    end
   end
 
   def number_of_sales #Returns the number of times this product has been sold
-    
+    array_of_sales = sales
+    sum = 0
+    array_of_sales.each do |sale|
+      sale += 1
+    end
   end
 
 
