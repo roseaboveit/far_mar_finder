@@ -37,4 +37,25 @@ class Vendor
       market_instance.id == @market_id
     end
   end 
+
+  def products # returns a collection of Product instances that are associated with market by the Product vendor_id field.d.
+    Product.all.select do |product_instance|
+      product_instance.vendor_id == @id
+    end
+  end 
+
+  def sales # returns a collection of Sale instances that are associated with market by the vendor_id field.
+    Sale.all.select do |sale_instance|
+      sale_instance.vendor_id == @id
+    end
+  end 
+
+  def revenue #returns the the sum of all of the vendor's sales (in cents)
+    sales_array = sales
+    sum = 0
+    sales_array.each do |sale|
+      sum += sale.value
+    end
+    sum
+  end
 end
