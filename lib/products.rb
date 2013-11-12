@@ -19,6 +19,12 @@ class Product
       product_instance.id.to_i == id
     end
   end
+
+  def self.find_by_name(name) #Ideas for EC: Search for impartial name
+    all.select do |product_instance|
+      product_instance.name.upcase == name.upcase
+    end
+  end
   
 
 end

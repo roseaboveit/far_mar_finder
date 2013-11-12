@@ -21,4 +21,10 @@ class Sale
       sale_instance.id.to_i == id
     end
   end
+
+  def self.find_by_name(value_in_cents) #Ideas for EC: Search for date
+    all.select do |sales_instance|
+      sales_instance.value == value_in_cents
+    end
+  end
 end
