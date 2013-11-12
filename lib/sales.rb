@@ -1,11 +1,11 @@
 class Sale
   attr_reader :id, :value, :purchase_time, :vendor_id, :product_id
   def initialize(array)
-    @id = array[0]
-    @value = array[1]
-    @purchase_time = array[2]
-    @vendor_id = array[3]
-    @product_id = array[4]
+    @id = array[0].to_i
+    @value = array[1].to_i
+    @purchase_time = Time.parse(array[2])
+    @vendor_id = array[3].to_i
+    @product_id = array[4].to_i
     
   end
 
@@ -35,8 +35,11 @@ class Sale
   end
 
   def self.between(beginning_time, end_time) # Returns Sale objects in given range
+    start = Time.parse(beginning_time)
+    finish = Time.parse(end_time)
+
     all.select do |sales_instance|
-      sales_instance.purchase_time <= end_time && sales_instance.purchase_time >= beginning_time
+      sales_instance.purchase_time <= finish && sales_instance.purchase_time >= start
     end
   end #Doesn't work yet!
 
