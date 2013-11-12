@@ -39,5 +39,17 @@ class Product
     end
   end
   
+  def vendor # Returns the vendor instance associated with this product
+    
+  end
+
+  def sales # Returns collection of Sale instances associated with this product
+    
+  end
+
+  def number_of_sales #Returns the number of times this product has been sold
+    
+  end
+
 
 end

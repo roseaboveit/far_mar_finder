@@ -33,4 +33,16 @@ class Sale
       sales_instance.value == value_in_cents
     end
   end
+
+  def self.between(beginning_time, end_time) # Returns Sale objects in given range
+    
+  end
+
+  def vendor # Returns Vendor instance associated with the sale
+    
+  end
+
+  def product # Returns the Product instance associated with the sale
+    
+  end
 end
