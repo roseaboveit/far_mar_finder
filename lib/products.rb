@@ -26,6 +26,18 @@ class Product
     end
   end
 
+  def self.find_by_market(market_id) #Ideas for EC: Search for impartial name
+      vendor_list = Vendor.all.select do |vendor_instance|
+        vendor_instance.market_id.to_i == market_id.to_i
+      end
+      product_list = []
+      vendor_list.each do |vendor_object|
+         product_list = all.select do |product_instance|
+         product_instance.vendor_id.to_i == vendor_object.id.to_i
+       end
+      end
+      product_list
+  end
 
   def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
     all.select do |product_instance|
@@ -55,8 +67,9 @@ class Product
     array_of_sales = sales
     sum = 0
     array_of_sales.each do |sale|
-      sale += 1
+      sum += 1
     end
+    sum
   end
 
 
