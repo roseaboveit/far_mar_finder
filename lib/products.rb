@@ -12,6 +12,13 @@ class Product
     CSV.read("./support/products.csv").map do |array|
       Product.new()
     end
+  end
+
+  def self.find(id)
+    CSV.read("./support/products.csv").find do |array|
+      array.include?(id)
+    end
+  end
   
 
 end

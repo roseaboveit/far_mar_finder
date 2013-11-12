@@ -9,3 +9,5 @@ require_relative 'market'
 class FarMarFinder
   # Your code goes here
 end
+
+# Market.find(1)

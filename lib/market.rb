@@ -16,6 +16,12 @@ class Market
       Market.new()
     end
   end
+
+  def self.find(id)
+    CSV.read("./support/markets.csv").find do |array|
+      array.include?(id)
+    end
+  end
   #Market.new should be able to be used for each of the elements of the Market file
 
 end

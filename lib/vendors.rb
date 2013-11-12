@@ -12,4 +12,11 @@ class Vendor
     CSV.read("./support/vendors.csv").map do |array|
       Vendor.new()
     end
+  end
+
+  def self.find(id)
+    CSV.read("./support/vendors.csv").find do |array|
+      array.include?(id)
+    end
+  end
 end

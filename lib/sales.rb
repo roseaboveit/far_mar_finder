@@ -14,4 +14,11 @@ class Sale
     CSV.read("./support/sales.csv").map do |array|
       Sale.new()
     end
+  end
+
+  def self.find(id)
+    CSV.read("./support/sales.csv").find do |array|
+      array.include?(id)
+    end
+  end
 end
