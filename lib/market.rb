@@ -29,9 +29,21 @@ class Market
     end
   end
 
-  def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
+  def self.find_all_by_city(city)
     all.select do |market_instance|
-      market_instance.name.upcase == name.upcase
+      market_instance.city.upcase == city.upcase
+    end
+  end
+
+  def self.find_all_by_state(state)
+    all.select do |market_instance|
+      market_instance.state.upcase == state.upcase
+    end
+  end
+
+  def self.find_all_by_zip(zip)
+    all.select do |market_instance|
+      market_instance.zip.to_i == zip.to_i
     end
   end
 
