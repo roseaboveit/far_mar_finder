@@ -55,8 +55,9 @@ class Product
     array_of_sales = sales
     sum = 0
     array_of_sales.each do |sale|
-      sale += 1
+      sum += 1
     end
+    sum
   end
 
 
