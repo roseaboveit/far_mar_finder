@@ -35,14 +35,16 @@ class Sale
   end
 
   def self.between(beginning_time, end_time) # Returns Sale objects in given range
-    
-  end
+    all.select do |sales_instance|
+      sales_instance.purchase_time <= end_time && sales_instance.purchase_time >= beginning_time
+    end
+  end #Doesn't work yet!
 
   def vendor # Returns Vendor instance associated with the sale
-    
-  end
+    Vendor.find(@vendor_id)
+  end #Doesn't work yet!
 
   def product # Returns the Product instance associated with the sale
-    
-  end
+    Product.find(@product_id)
+  end #Doesn't work yet!
 end
