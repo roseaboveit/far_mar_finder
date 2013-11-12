@@ -1,10 +1,10 @@
 class Vendor
   attr_reader :id, :name, :num_employees, :market_id
   def initialize(array)
-    @id = array[0]
+    @id = array[0].to_i
     @name = array[1]
-    @num_employees = array[2]
-    @market_id = array[3]
+    @num_employees = array[2].to_i
+    @market_id = array[3].to_i
   end
 
 
@@ -31,4 +31,10 @@ class Vendor
       vendor_instance.name.upcase == name.upcase
     end
   end
+
+  def market # returns the Market instance that is associated with this vendor using the Vendor market_id field
+    Market.all.find do |market_instance|
+      market_instance.id == @market_id
+    end
+  end 
 end

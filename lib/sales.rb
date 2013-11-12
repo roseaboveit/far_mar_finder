@@ -41,13 +41,13 @@ class Sale
     all.select do |sales_instance|
       sales_instance.purchase_time <= finish && sales_instance.purchase_time >= start
     end
-  end #Doesn't work yet!
+  end 
 
   def vendor # Returns Vendor instance associated with the sale
     Vendor.find(@vendor_id)
-  end #Doesn't work yet!
+  end 
 
   def product # Returns the Product instance associated with the sale
     Product.find(@product_id)
-  end #Doesn't work yet!
+  end 
 end
