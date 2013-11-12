@@ -26,6 +26,12 @@ class Vendor
     end
   end
 
+  def self.by_market(market_id)
+    all.select do |vendor_instance|
+      vendor_instance.market_id == market_id
+    end
+  end
+
   def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
     all.select do |vendor_instance|
       vendor_instance.name.upcase == name.upcase

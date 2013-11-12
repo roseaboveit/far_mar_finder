@@ -26,10 +26,14 @@ class Product
     end
   end
 
-  def self.find_by_market(market_id) #Ideas for EC: Search for impartial name
-      vendor_list = Vendor.all.select do |vendor_instance|
-        vendor_instance.market_id.to_i == market_id.to_i
-      end
+  def self.by_vendor(vendor_id)
+    all.select do |product_instance|
+      product_instance.vendor_id == vendor_id
+    end
+  end
+  
+  def self.by_market(market_id) #Ideas for EC: Search for impartial name
+      vendor_list = Vendor.by_market(market_id) 
       product_list = []
       vendor_list.each do |vendor_object|
          product_list = all.select do |product_instance|
