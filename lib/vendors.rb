@@ -20,9 +20,21 @@ class Vendor
     end
   end
 
-  def self.find_by_name(name) #Ideas for EC: Search for impartial name
+  def self.find_by_id(id) 
+    all.find do |vendor_instance|
+      vendor_instance.id.to_i== id.to_i
+    end
+  end
+
+  def self.find_by_name(name) 
     all.find do |vendor_instance|
       vendor_instance.name.upcase == name.upcase
+    end
+  end
+
+  def self.find_by_no_of_employees(no_of_employees) 
+    all.find do |vendor_instance|
+      vendor_instance.no_of_employees.to_i == no_of_employees.to_i
     end
   end
 
@@ -32,9 +44,15 @@ class Vendor
     end
   end
 
-  def self.find_all_by_name(name) #Ideas for EC: Search for impartial name
+  def self.find_all_by_no_of_employees(no_of_employees) 
     all.select do |vendor_instance|
-      vendor_instance.name.upcase == name.upcase
+      vendor_instance.no_of_employees.to_i == no_of_employees.to_i
+    end
+  end
+
+  def self.find_all_by_market_id(market_id) 
+    all.select do |vendor_instance|
+      vendor_instance.market_id.to_i == market_id.to_i
     end
   end
 
