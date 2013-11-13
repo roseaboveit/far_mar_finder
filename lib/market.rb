@@ -51,14 +51,14 @@ class Market
     end
   end
 
+  def self.random #random returns a random instance
+      all.sample
+  end
+
   def vendors # returns a collection of Vendor instances that are associated with the market by the market_id field.
     Vendor.all.select do |vendor_instance|
       vendor_instance.market_id == @id
     end
   end 
-
-  def self.random #random returns a random instance
-      all.sample
-  end
 
 end
