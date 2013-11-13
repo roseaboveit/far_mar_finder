@@ -7,7 +7,6 @@ class Product
     @vendor_id = array[2].to_i
   end
 
-
   def self.all
     CSV.read("./support/products.csv").map do |array|
       Product.new(array)
@@ -75,6 +74,5 @@ class Product
     end
     sum
   end
-
 
 end

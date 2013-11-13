@@ -6,9 +6,7 @@ class Sale
     @purchase_time = Time.parse(array[2])
     @vendor_id = array[3].to_i
     @product_id = array[4].to_i
-    
   end
-
 
   def self.all
     CSV.read("./support/sales.csv").map do |array|

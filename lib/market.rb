@@ -53,5 +53,4 @@ class Market
     end
   end 
 
-
 end
