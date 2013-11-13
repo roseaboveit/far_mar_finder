@@ -7,7 +7,6 @@ class Vendor
     @market_id = array[3].to_i
   end
 
-
   def self.all
     CSV.read("./support/vendors.csv").map do |array|
       Vendor.new(array)
@@ -79,6 +78,14 @@ class Vendor
     sum = 0
     sales_array.each do |sale|
       sum += sale.amount
+    end
+    sum
+  end
+
+  def no_of_products
+    sum = 0
+    products.each do |element| 
+      sum += 1  
     end
     sum
   end
