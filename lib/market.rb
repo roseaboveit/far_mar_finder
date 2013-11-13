@@ -53,10 +53,10 @@ class Market
 
   def self.search(search_term)
     market_list = []
-    search_regex = Regexp.new(search_term)
+    search_regex = Regexp.new(search_term.upcase)
     all.each do |market_instance|
       market_instance.to_a.each do |attribute|
-        test = attribute.to_s.match search_regex
+        test = attribute.to_s.upcase.match search_regex
         if test.class == MatchData
           market_list << market_instance
         end 
