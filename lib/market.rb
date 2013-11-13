@@ -12,6 +12,10 @@ class Market
   end
 
   def self.all
+    @list ||= make_list
+  end
+
+  def self.make_list
     CSV.read("./support/markets.csv").map do |array|
       Market.new(array)
     end
