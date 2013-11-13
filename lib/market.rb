@@ -51,6 +51,20 @@ class Market
     end
   end
 
+  def self.search(search_term)
+    market_list = []
+    search_regex = Regexp.new(search_term)
+    all.each do |market_instance|
+      market_instance.to_a.each do |attribute|
+        test = attribute.to_s.match search_regex
+        if test.class == MatchData
+          market_list << market_instance
+        end 
+      end
+    end
+    market_list
+  end
+
   def products #Ideas for EC: Search for impartial name
     Product.by_market(@id)
   end
@@ -65,4 +79,9 @@ class Market
     end
   end 
 
+  # extra methods that just help make things easier
+  def to_a
+    #convert to array
+    [@id, @name, @address, @city, @county, @state, @zip]
+  end
 end
