@@ -8,6 +8,10 @@ class Product
   end
 
   def self.all
+    @list ||= make_list
+  end
+
+  def self.make_list
     CSV.read("./support/products.csv").map do |array|
       Product.new(array)
     end

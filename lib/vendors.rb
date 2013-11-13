@@ -8,6 +8,10 @@ class Vendor
   end
 
   def self.all
+    @list ||= make_list
+  end
+
+  def self.make_list
     CSV.read("./support/vendors.csv").map do |array|
       Vendor.new(array)
     end

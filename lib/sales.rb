@@ -9,6 +9,10 @@ class Sale
   end
 
   def self.all
+    @list ||= make_list
+  end
+
+  def self.make_list
     CSV.read("./support/sales.csv").map do |array|
       Sale.new(array)
     end
