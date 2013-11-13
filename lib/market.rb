@@ -79,6 +79,18 @@ class Market
     end
   end 
 
+  def preferred_vendor
+    best_vendor = 0
+    vendors_revenue = []
+    vendors.each do |vendor_instance|
+      vendors_revenue << vendor_instance.revenue
+      if vendor_instance.revenue == vendors_revenue.max
+        best_vendor = vendor_instance
+      end
+    end
+    best_vendor
+end
+
   # extra methods that just help make things easier
   def to_a
     #convert to array
