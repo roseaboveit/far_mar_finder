@@ -69,4 +69,8 @@ class Sale
   def product # Returns the Product instance associated with the sale
     Product.find(@product_id)
   end 
+
+  def self.random #random returns a random instance
+      all.sample
+  end
 end

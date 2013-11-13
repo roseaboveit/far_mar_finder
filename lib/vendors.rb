@@ -93,4 +93,9 @@ class Vendor
     end
     sum
   end
+
+  def self.random #random returns a random instance
+      all.sample
+  end
+  
 end
