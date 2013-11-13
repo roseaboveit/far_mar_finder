@@ -51,6 +51,10 @@ class Market
     end
   end
 
+  def products #Ideas for EC: Search for impartial name
+    Product.by_market(@id)
+  end
+
   def self.random #random returns a random instance
       all.sample
   end

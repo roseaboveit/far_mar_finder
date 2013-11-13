@@ -39,8 +39,10 @@ class Product
       vendor_list = Vendor.by_market(market_id) 
       product_list = []
       vendor_list.each do |vendor_object|
-         product_list = all.select do |product_instance|
-         product_instance.vendor_id.to_i == vendor_object.id.to_i
+          all.select do |product_instance|
+            if product_instance.vendor_id.to_i == vendor_object.id.to_i
+              product_list<<product_instance
+            end
        end
       end
       product_list
