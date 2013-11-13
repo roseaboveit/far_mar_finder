@@ -22,15 +22,21 @@ class Sale
     end
   end
 
-  def self.find_by_name(value_in_cents) #Ideas for EC: Search for date
+  def self.find_by_amount(value_in_cents) #Ideas for EC: Search for date
     all.find do |sales_instance|
       sales_instance.amount == value_in_cents
     end
   end
 
-  def self.find_all_by_name(value_in_cents) #Ideas for EC: Search for date
+  def self.find_all_by_amount(value_in_cents) #Ideas for EC: Search for date
     all.select do |sales_instance|
       sales_instance.amount == value_in_cents
+    end
+  end
+
+  def self.find_all_by_purchase_time(purchase_time) #Ideas for EC: Search for date
+    all.select do |sales_instance|
+      sales_instance.purchase_time == Time.parse(purchase_time)
     end
   end
 
