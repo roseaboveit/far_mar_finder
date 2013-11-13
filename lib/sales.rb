@@ -61,6 +61,9 @@ class Sale
     sum/sales_qty
   end
 
+  def self.random #random returns a random instance
+      all.sample
+  end
 
   def vendor # Returns Vendor instance associated with the sale
     Vendor.find(@vendor_id)
@@ -69,8 +72,4 @@ class Sale
   def product # Returns the Product instance associated with the sale
     Product.find(@product_id)
   end 
-
-  def self.random #random returns a random instance
-      all.sample
-  end
 end

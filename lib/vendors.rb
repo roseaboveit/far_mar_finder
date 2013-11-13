@@ -59,6 +59,10 @@ class Vendor
     end
   end
 
+  def self.random #random returns a random instance
+    all.sample
+  end
+
   def market # returns the Market instance that is associated with this vendor using the Vendor market_id field
     Market.all.find do |market_instance|
       market_instance.id == @market_id
@@ -93,9 +97,4 @@ class Vendor
     end
     sum
   end
-
-  def self.random #random returns a random instance
-      all.sample
-  end
-  
 end

@@ -57,6 +57,10 @@ class Product
       product_instance.vendor_id.to_i == vendor_id.to_i
     end
   end
+
+  def self.random #random returns a random instance
+      all.sample
+  end
   
   def vendor # Returns the vendor instance associated with this product's vendor_id
     Vendor.all.find do |vendor_instance|
@@ -78,9 +82,4 @@ class Product
     end
     sum
   end
-
-  def self.random #random returns a random instance
-      all.sample
-  end
-
 end
