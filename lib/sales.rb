@@ -49,6 +49,17 @@ class Sale
     end
   end 
 
+  def self.average_price
+    sum = 0
+    sales_qty = 0
+    all.each do |sale_instance|
+      sum += sale_instance.amount.to_i
+      sales_qty += 1
+    end
+    sum/sales_qty
+  end
+
+
   def vendor # Returns Vendor instance associated with the sale
     Vendor.find(@vendor_id)
   end 
