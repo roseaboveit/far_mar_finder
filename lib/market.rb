@@ -89,7 +89,38 @@ class Market
       end
     end
     best_vendor
-end
+  end
+
+  def preferred_vendor(date) #NOT YET TESTED
+    relevant_date = Time.parse(date) ###### Date aspect still having problems also check Sales.rb
+    relevant_sales = []
+    sales_array = Sale.specific_date(relevant_date)
+    vendors.each do |vendor_instance|
+      sales_array.each do |sales_instance|
+        if sales_instance.vendor_id == vendor_instance.id
+          relevant_sales << sales_instance
+        end
+      end
+    end
+    best_vendor_id = 0
+    best_vendor_revenue = 0 
+    vendors_revenue = {}
+    relevant_sales.each do |sales_instance|
+      key = sales_instance.vendor_id
+      unless vendors_revenue.has_key?(sales_instance.vendor_id)
+        vendors_revenue[key] = 0
+      end
+      vendors_revenue[key] += sales_instance.amount
+    end
+    
+    vendors_revenue.each do |key,value| 
+      if value >= best_vendor_revenue
+        best_vendor_id = key
+        best_vendor_revenue = value
+      end
+    end
+    best_vendor_id #currently returns the ID NOT THE OBJECT
+  end
 
   # extra methods that just help make things easier
   def to_a

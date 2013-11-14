@@ -51,6 +51,12 @@ class Sale
     end
   end 
 
+  def self.specific_date(time_object)
+    all.select do |sales_instance|
+      sales_instance.purchase_time.yday == time_object.yday
+    end
+  end
+
   def self.average_price
     sum = 0
     sales_qty = 0
