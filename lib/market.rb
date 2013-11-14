@@ -91,7 +91,7 @@ class Market
     best_vendor
   end
 
-  def preferred_vendor(date) 
+  def apreferred_vendor(date) 
     relevant_date = Time.parse(date) 
     relevant_sales = []
     sales_array = Sale.specific_date(relevant_date)
