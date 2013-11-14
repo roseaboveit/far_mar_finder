@@ -52,7 +52,7 @@ class Market
   end
 
   def self.search(search_term)
-    all.grep(/search_term/)# search_term is a string, returns empty array
+    all.grep(/#{search_term}/i) { |market_instance| market_instance.name }# search_term is a string, returns empty array
     # market_list = []
     # search_regex = Regexp.new(search_term.upcase)
     # all.each do |market_instance|
