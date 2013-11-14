@@ -91,8 +91,8 @@ class Market
     best_vendor
   end
 
-  def preferred_vendor(date) #NOT YET TESTED
-    relevant_date = Time.parse(date) ###### Date aspect still having problems also check Sales.rb
+  def preferred_vendor(date) 
+    relevant_date = Time.parse(date) 
     relevant_sales = []
     sales_array = Sale.specific_date(relevant_date)
     vendors.each do |vendor_instance|
@@ -119,7 +119,7 @@ class Market
         best_vendor_revenue = value
       end
     end
-    best_vendor_id #currently returns the ID NOT THE OBJECT
+    Vendor.find(best_vendor_id) 
   end
 
   # extra methods that just help make things easier
