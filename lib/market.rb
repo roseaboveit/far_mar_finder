@@ -79,19 +79,12 @@ class Market
     end
   end 
 
-  def preferred_vendor
-    best_vendor = 0
-    vendors_revenue = []
-    vendors.each do |vendor_instance|
-      vendors_revenue << vendor_instance.revenue
-      if vendor_instance.revenue == vendors_revenue.max
-        best_vendor = vendor_instance
-      end
-    end
-    best_vendor
+  def preferred_vendor #returns the vendor with the highest revenue, initial real time in benchmark
+                       # is 7.115, the second time is 0.007, also requires @revenue from vendor
+    vendors.sort_by { |n| n.revenue}[0]
   end
 
-  def preferred_vendor(date) 
+  def a_preferred_vendor(date) 
     relevant_date = Time.parse(date) 
     relevant_sales = []
     sales_array = Sale.specific_date(relevant_date)
