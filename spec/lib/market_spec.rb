@@ -35,6 +35,7 @@ describe Market do
 
     it "by 'Massachusetts' returns array including market 5" do
       market_class.find_all_by_state("Massachusetts").first.id.should eq 5
+      market_class.find_all_by_state(nil).should eq []
     end
 
     it "by zip '2169' returns array including market 5" do

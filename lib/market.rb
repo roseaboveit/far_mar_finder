@@ -46,9 +46,9 @@ class Market
 
   def self.find_all_by_state(state)
     all.select do |market_instance|
-      unless market_instance.state == nil
+      unless state == nil
         market_instance.state.upcase == state.upcase
-      else
+      else 
         market_instance.state == state
       end
     end

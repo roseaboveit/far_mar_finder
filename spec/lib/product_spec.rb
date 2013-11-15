@@ -11,6 +11,7 @@ describe Product do
   end
   
   describe "class methods" do
+    let(:sample_product) { Product.new(["4", "Yummy Fruit", "3"]) }
     it "responds to 'all'" do
       product_class.should respond_to :all
     end
@@ -34,6 +35,19 @@ describe Product do
     it "does not throw an error" do
       product_class.random.should_not raise_error
     end
+
+    it "returns product 4 when searching for 'Yummy Fruit' using find_by_name" do
+      product_class.find_by_name("Yummy Fruit").id.should eq sample_product.id
+    end
+
+    it "inckudes product 4 when searching all by name 'Yummy Fruit'" do
+      product_class.find_all_by_name("Yummy Fruit").first.id.should eq sample_product.id
+    end
+
+    it "includes product 4 when searching all by vendor id '3' " do
+      product_class.find_all_by_vendor_id(3).first.id.should eq sample_product.id
+    end
+
   end
   
   describe "attributes" do

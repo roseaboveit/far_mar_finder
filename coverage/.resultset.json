@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/far_mar_finder.rb": [
+      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/far_mar_finder.rb": [
         1,
         1,
         1,
@@ -21,7 +21,7 @@
         null,
         null,
         1,
-        14,
+        17,
         null,
         null,
         1,
@@ -31,7 +31,7 @@
         null,
         null
       ],
-      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/sales.rb": [
+      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/sales.rb": [
         1,
         1,
         1,
@@ -114,7 +114,7 @@
         null,
         null
       ],
-      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/vendors.rb": [
+      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/vendors.rb": [
         1,
         1,
         1,
@@ -224,18 +224,18 @@
         null,
         null
       ],
-      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/products.rb": [
+      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/products.rb": [
         1,
         1,
         null,
         1,
-        8193,
-        8193,
-        8193,
+        8196,
+        8196,
+        8196,
         null,
         null,
         1,
-        12,
+        15,
         null,
         null,
         1,
@@ -251,8 +251,8 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        4,
         null,
         null,
         null,
@@ -276,14 +276,14 @@
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        8193,
         null,
         null,
         null,
         1,
-        0,
-        0,
+        1,
+        8193,
         null,
         null,
         null,
@@ -313,7 +313,7 @@
         null,
         null
       ],
-      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/market.rb": [
+      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/market.rb": [
         1,
         1,
         null,
@@ -328,7 +328,7 @@
         null,
         null,
         1,
-        16,
+        17,
         null,
         null,
         1,
@@ -361,11 +361,11 @@
         null,
         null,
         1,
-        1,
-        500,
+        2,
+        1000,
         500,
         null,
-        0,
+        500,
         null,
         null,
         null,
@@ -475,6 +475,6 @@
         null
       ]
     },
-    "timestamp": 1384557317
+    "timestamp": 1384559310
   }
 }
