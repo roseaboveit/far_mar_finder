@@ -63,6 +63,15 @@ class Vendor
     all.sample
   end
 
+  def self.most_revenue(n)
+    vendor_revenues = {}
+    top_vendors = []
+    all.each do |vendor_instance|
+      vendor_revenues[vendor_instance] = vendor_instance.revenue
+    end
+    vendor_revenues.sort_by {|key, value| value}[0,n].collect {|k_v| k_v[0]} 
+  end
+
   def market # returns the Market instance that is associated with this vendor using the Vendor market_id field
     Market.all.find do |market_instance|
       market_instance.id == @market_id
