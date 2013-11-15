@@ -63,9 +63,8 @@ class Vendor
     all.sample
   end
 
-  def self.most_revenue(n)
+  def self.most_revenue(n)#returns the top n vendor instances ranked by total revenue
     vendor_revenues = {}
-    top_vendors = []
     all.each do |vendor_instance|
       vendor_revenues[vendor_instance] = vendor_instance.revenue
     end

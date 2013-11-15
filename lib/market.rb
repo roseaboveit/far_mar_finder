@@ -79,7 +79,15 @@ class Market
     end
   end 
 
-  def preferred_vendor
+  def preferred_vendor(date=nil)
+    if date == nil
+      best_vendor
+    else 
+      best_vendor_by_date(date)
+    end
+  end
+  
+  def best_vendor
     best_vendor = 0
     vendors_revenue = []
     vendors.each do |vendor_instance|
@@ -103,7 +111,7 @@ class Market
     worst_vendor
   end
 
-  def apreferred_vendor(date) 
+  def best_vendor_by_date(date) 
     relevant_date = Time.parse(date) 
     relevant_sales = []
     sales_array = Sale.specific_date(relevant_date)
