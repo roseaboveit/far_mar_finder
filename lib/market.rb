@@ -91,6 +91,18 @@ class Market
     best_vendor
   end
 
+  def worst_vendor
+    worst_vendor = 0
+    vendors_revenue = []
+    vendors.each do |vendor_instance|
+      vendors_revenue << vendor_instance.revenue
+      if vendor_instance.revenue == vendors_revenue.min
+        worst_vendor = vendor_instance
+      end
+    end
+    worst_vendor
+  end
+
   def apreferred_vendor(date) 
     relevant_date = Time.parse(date) 
     relevant_sales = []
