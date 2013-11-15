@@ -35,13 +35,22 @@ class Market
 
   def self.find_all_by_city(city)
     all.select do |market_instance|
-      market_instance.city.upcase == city.upcase
+      unless market_instance.city == nil
+        market_instance.city.upcase == city.upcase
+      else
+        market_instance.city == city
+      end
+      
     end
   end
 
   def self.find_all_by_state(state)
     all.select do |market_instance|
-      market_instance.state.upcase == state.upcase
+      unless market_instance.state == nil
+        market_instance.state.upcase == state.upcase
+      else
+        market_instance.state == state
+      end
     end
   end
 

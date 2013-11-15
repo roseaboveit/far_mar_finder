@@ -30,6 +30,10 @@ describe Product do
     it "find the first product by market 1" do
       product_class.by_vendor(1).first.name.should eq "Dry Beets"
     end
+
+    it "does not throw an error" do
+      product_class.random.should_not raise_error
+    end
   end
   
   describe "attributes" do

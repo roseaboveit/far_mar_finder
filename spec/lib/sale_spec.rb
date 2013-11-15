@@ -21,6 +21,18 @@ describe Sale do
     it "responds to 'find'" do
       sale_class.should respond_to :find
     end
+
+    it "returns the 4th sales instance when search for 1634" do
+      sale_class.find_by_amount(1634).id.should eq 4
+    end
+
+    it "returns the 4th sales instance when search for 1634" do
+      sale_class.find_all_by_amount(1634).first.id.should eq 4
+    end
+
+    it "does not throw an error" do
+      sale_class.random.should_not raise_error
+    end
   end
   
   describe "attributes" do

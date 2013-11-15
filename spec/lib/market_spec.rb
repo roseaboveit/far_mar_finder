@@ -10,8 +10,8 @@ describe Market do
   end
   
   describe "class methods" do
-    #let(:sample_market) {Market.new(["5", "Quincy Farmers Market", 
-    #  "0 Denis Ryan Parkway", "Quincy", "Norfolk", "Massachusetts", "2169"])}
+    let(:sample_market) {Market.new(["5", "Quincy Farmers Market", 
+      "0 Denis Ryan Parkway", "Quincy", "Norfolk", "Massachusetts", "2169"])}
     it "responds to 'all'" do
       market_class.should respond_to :all
     end
@@ -25,9 +25,30 @@ describe Market do
     end
 
 
-    it "return the market by name" do 
-      market_class.find_by_name("Quincy Farmers Market").address.should eq "0 Denis Ryan Parkway"
+    it "returns the market by name" do 
+      market_class.find_by_name("Quincy Farmers Market").address.should eq sample_market.address
     end
+
+    it "by 'Quincy' returns array including market 5" do
+      market_class.find_all_by_city("Quincy").first.id.should eq 5
+    end
+
+    it "by 'Massachusetts' returns array including market 5" do
+      market_class.find_all_by_state("Massachusetts").first.id.should eq 5
+    end
+
+    it "by zip '2169' returns array including market 5" do
+      market_class.find_all_by_zip("2169").first.id.should eq 5
+    end
+
+    it "searches 'helmer' and finds market 3" do
+      market_class.search('helmer').first.id.should eq 3
+    end
+
+    it "does not throw an error" do
+      market_class.random.should_not raise_error
+    end
+
   end
   
   describe "attributes" do
