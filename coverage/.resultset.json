@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/far_mar_finder.rb": [
+      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/far_mar_finder.rb": [
         1,
         1,
         1,
@@ -31,7 +31,7 @@
         null,
         null
       ],
-      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/sales.rb": [
+      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/sales.rb": [
         1,
         1,
         1,
@@ -114,7 +114,7 @@
         null,
         null
       ],
-      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/vendors.rb": [
+      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/vendors.rb": [
         1,
         1,
         1,
@@ -224,7 +224,7 @@
         null,
         null
       ],
-      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/products.rb": [
+      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/products.rb": [
         1,
         1,
         null,
@@ -313,7 +313,7 @@
         null,
         null
       ],
-      "/Users/Gala/ada-class/farmar/far_mar_finder/lib/market.rb": [
+      "/Users/whitneylevis/ada-class/far_mar/far_mar_finder/lib/market.rb": [
         1,
         1,
         null,
@@ -475,6 +475,6 @@
         null
       ]
     },
-    "timestamp": 1384559310
+    "timestamp": 1384559711
   }
 }

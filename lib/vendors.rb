@@ -7,53 +7,53 @@ class Vendor
     @market_id = array[3].to_i
   end
 
-  def self.all
+  def self.all # Returns an array of all the vendor objects - memoized
     @list ||= make_list
   end
 
-  def self.make_list
+  def self.make_list # Finds all the vendor objects by going through the csv
     CSV.read("./support/vendors.csv").map do |array|
       Vendor.new(array)
     end
   end
 
-  def self.find(id)
+  def self.find(id) # Returns a vendor object based on the id number
     all.find do |vendor_instance|
       vendor_instance.id.to_i == id
     end
   end
 
-  def self.find_by_id(id) 
+  def self.find_by_id(id) # Returns a vendor object with a given vendor id
     all.find do |vendor_instance|
       vendor_instance.id.to_i== id.to_i
     end
   end
 
-  def self.find_by_name(name) 
+  def self.find_by_name(name) # Returns the first vendor with a given name
     all.find do |vendor_instance|
       vendor_instance.name.upcase == name.upcase
     end
   end
 
-  def self.find_by_no_of_employees(no_of_employees) 
+  def self.find_by_no_of_employees(no_of_employees) # Returns the first vendor with a given number of employees
     all.find do |vendor_instance|
       vendor_instance.no_of_employees.to_i == no_of_employees.to_i
     end
   end
 
-  def self.by_market(market_id)
+  def self.by_market(market_id) # returns all the vendors with a given market id
     all.select do |vendor_instance|
       vendor_instance.market_id == market_id
     end
   end
 
-  def self.find_all_by_no_of_employees(no_of_employees) 
+  def self.find_all_by_no_of_employees(no_of_employees) # returns all vendors with given number of vendors
     all.select do |vendor_instance|
       vendor_instance.no_of_employees.to_i == no_of_employees.to_i
     end
   end
 
-  def self.find_all_by_market_id(market_id) 
+  def self.find_all_by_market_id(market_id) # returns all the vendors with a given market id
     all.select do |vendor_instance|
       vendor_instance.market_id.to_i == market_id.to_i
     end
@@ -71,19 +71,21 @@ class Vendor
     vendor_revenues.sort_by {|key, value| value}[0,n].collect {|k_v| k_v[0]} 
   end
 
-  def market # returns the Market instance that is associated with this vendor using the Vendor market_id field
+# Instance Methods
+
+  def market # returns the Market instance using the Vendor market_id field
     Market.all.find do |market_instance|
       market_instance.id == @market_id
     end
   end 
 
-  def products # returns a collection of Product instances that are associated with market by the Product vendor_id field.d.
+  def products # returns a collection of Product instances by the vendor_id field.
     Product.all.select do |product_instance|
       product_instance.vendor_id == @id
     end
   end 
 
-  def sales # returns a collection of Sale instances that are associated with market by the vendor_id field.
+  def sales # returns a collection of Sale instances by the vendor_id field.
     Sale.all.select do |sale_instance|
       sale_instance.vendor_id == @id
     end
@@ -98,7 +100,7 @@ class Vendor
     sum
   end
 
-  def no_of_products
+  def no_of_products # returns the number of products that the vendor sells
     sum = 0
     products.each do |element| 
       sum += 1  
